@@ -14,7 +14,10 @@ import { Provider } from 'react-redux';
 
 import createStore from './store/createStore';
 
-import App from './components/app-root/AppContainer';
+// carcass component
+import App from './components/app-root/App';
+
+// routes
 import SlotGame from './pages/slot-game/SlotGameContainer';
 import About from './pages/about/AboutContainer';
 import PageNotFound from './pages/page-not-found/PageNotFoundContainer';
@@ -29,6 +32,7 @@ ReactDOM.render((
             <Route path="/" component={App}>
                 <Route path="slot-game" component={SlotGame}/>
                 <Route path="about" component={About}/>
+
                 <IndexRoute component={SlotGame}/>
                 <Route path="*" component={PageNotFound}/>
             </Route>

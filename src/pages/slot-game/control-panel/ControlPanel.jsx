@@ -33,9 +33,9 @@ class ControlPanel extends Component {
                     <label>Line bet: </label>
 
                     <Crement
-                            min={config.minCoins}
-                            max={config.maxCoins}
-                            value={lineBet}
+                            min={config.minCoins / config.coinValue}
+                            max={config.maxCoins / config.coinValue}
+                            value={lineBet / config.coinValue}
                             onIncrement={incrementLineBet}
                             onDecrement={decrementLineBet}
                     />

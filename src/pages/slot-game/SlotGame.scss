@@ -17,19 +17,24 @@
     background-color: $color-light-grey;
     overflow: hidden;
 
-    &.loading,
-    &.error {
+    &.message {
         display: flex;
 
         justify-content: center;
         align-items: center;
 
         font-size: 2rem;
-        text-shadow: 0 1px $color-white;
     }
 
-    &.error {
+    &.slot-state-error,
+    &.config-fetch-error {
+        flex-direction: column;
+
         color: $color-red;
+
+        >button {
+            margin-top: 1rem;
+        }
     }
 
     &.game {

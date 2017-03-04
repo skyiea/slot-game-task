@@ -19,6 +19,11 @@ function rootReducer(state, action) {
                         ...state,
                         config: null
                     };
+                case STATUS.failure:
+                    return {
+                        ...state,
+                        config: new Error()
+                    };
                 case STATUS.success: {
                     const {
                         config
@@ -42,10 +47,6 @@ function rootReducer(state, action) {
                         spinInProgress: true
                     };
                 case STATUS.failure:
-                    return {
-                        ...state,
-                        spinInProgress: false
-                    };
                 case STATUS.success:
                     return {
                         ...state,
@@ -82,5 +83,6 @@ function rootReducer(state, action) {
 }
 
 export default createReducer(rootReducer, {
+    // domain reducers
     slotState: slotStateReducer
 });

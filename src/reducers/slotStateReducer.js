@@ -9,42 +9,23 @@ function reducer(state, action) {
     } = action;
 
     switch (type) {
-        case TYPES.RESET_SLOT_STATE: {
-            let newSlotState;
-
+        case TYPES.RESET_SLOT_STATE:
+        case TYPES.FETCH_SLOT_STATE:
             switch (status) {
                 case STATUS.request:
-                    newSlotState = null;
-
-                    break;
+                    return null;
+                case STATUS.failure:
+                    return new Error();
                 case STATUS.success:
-                    newSlotState = payload.slotState;
-
-                    break;
+                    return payload.slotState;
                 default:
             }
 
-            return newSlotState;
-        }
-        case TYPES.FETCH_SLOT_STATE: {
-            let newSlotState;
-
-            switch (status) {
-                case STATUS.request:
-                    newSlotState = null;
-
-                    break;
-                case STATUS.success:
-                    newSlotState = payload.slotState;
-
-                    break;
-                default:
-            }
-
-            return newSlotState;
-        }
+            break;
         case TYPES.SPIN_SLOTS:
             switch (status) {
+                case STATUS.failure:
+                    return new Error();
                 case STATUS.success:
                     return payload.slotState;
                 default:
