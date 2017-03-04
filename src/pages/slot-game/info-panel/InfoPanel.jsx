@@ -8,6 +8,7 @@ import styles from './InfoPanel.scss';
 class InfoPanel extends Component {
     render() {
         const {
+            config,
             slotState,
             spinInProgress,
         } = this.props;
@@ -23,7 +24,10 @@ class InfoPanel extends Component {
             <section styleName="info-panel">
                 <section styleName="line balance">
                     <label>Balance: </label>
-                    <span styleName={balance === 0 && 'empty'}>{balance}</span>
+
+                    <span styleName={balance === 0 && 'empty'}>
+                        {balance / config.coinValue}
+                    </span>
                 </section>
                 {
                     !spinInProgress && gameRoundId !== null &&

@@ -1,3 +1,5 @@
+@import '../../../styles/colors';
+
 $size: 15rem;
 $space-between: 1rem;
 
@@ -62,6 +64,12 @@ $space-between: 1rem;
         &:not(:last-child) {
             >.cell {
                 border-bottom: $border-value;
+            }
+        }
+
+        &:not(:first-child) {
+            >.cell {
+                box-shadow: inset 0 1px $color-white;
             }
         }
     }

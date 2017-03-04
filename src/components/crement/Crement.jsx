@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import CSSModules from '../../../../utils/css-modules';
+import CSSModules from '../../utils/css-modules';
 
 import styles from './Crement.scss';
 

@@ -42,8 +42,16 @@ class SlotGame extends Component {
             );
         }
 
+        if (slotState.errorCode !== null) {
+            return (
+                <section styleName={cn(rootStyleName, 'error')}>
+                    Error
+                </section>
+            );
+        }
+
         return (
-            <section styleName={rootStyleName}>
+            <section styleName={cn(rootStyleName, 'game')}>
                 <section styleName="first-row">
                     <Slots/>
                     <InfoPanel/>

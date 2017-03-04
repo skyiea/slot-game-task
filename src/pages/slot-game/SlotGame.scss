@@ -12,30 +12,39 @@
 
     flex-grow: 0;
 
-    background-color: #ccc;
+    text-shadow: 0 1px $color-white;
+
+    background-color: $color-light-grey;
     overflow: hidden;
 
-    >.first-row {
-        display: flex;
-
-        >.info-panel {
-            margin-left: 1rem;
-
-            flex-grow: 1;
-        }
-    }
-
-    >.control-panel {
-        margin-top: 1rem;
-    }
-
-    &.loading {
+    &.loading,
+    &.error {
         display: flex;
 
         justify-content: center;
         align-items: center;
 
         font-size: 2rem;
-        text-shadow: 0 1px #fff;
+        text-shadow: 0 1px $color-white;
+    }
+
+    &.error {
+        color: $color-red;
+    }
+
+    &.game {
+        >.first-row {
+            display: flex;
+
+            >.info-panel {
+                margin-left: 1rem;
+
+                flex-grow: 1;
+            }
+        }
+
+        >.control-panel {
+            margin-top: 1rem;
+        }
     }
 }

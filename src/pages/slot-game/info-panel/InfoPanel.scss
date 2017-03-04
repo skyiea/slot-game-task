@@ -7,6 +7,8 @@
         display: flex;
         margin-bottom: 1rem;
 
+        align-items: baseline;
+
         >label {
             width: 5rem;
 
@@ -15,6 +17,8 @@
 
         >span {
             flex-grow: 1;
+
+            font-size: 1.2rem;
         }
 
         &.balance {
@@ -29,6 +33,7 @@
 
         &.victory {
             color: $color-red;
+            text-transform: uppercase;
         }
     }
 }

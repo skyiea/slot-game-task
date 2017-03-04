@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import CSSModules from '../../../utils/css-modules';
 import { LINES_COUNT } from '../../../utils/constants';
 
-import Crement from './crement/Crement';
+import Crement from '../../../components/crement/Crement';
 
 import styles from './ControlPanel.scss';
 
