@@ -1,17 +1,3 @@
-# jsx-suit
-Quick-start suit for JSX development
+# slot-game-task
 
-Includes:
-  - Webpack (with hot dev-server)
-  - React
-  - ES6 and JSX compiler (babel)
-  - SCSS compiler
-  - Nodemon server
-  
-To prepare project (install necessary global and local packages), use:
-  - npm prepare
-  
-To start suit:
-  - npm run server
-  - npm run hot
-  - open http://localhost:1234
+Slot Game task for Tain
