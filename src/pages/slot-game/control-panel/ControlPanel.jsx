@@ -41,7 +41,7 @@ class ControlPanel extends Component {
                 </section>
 
                 <section styleName="line">
-                    <label>Bet on lines: </label>
+                    <label>Lines to bet: </label>
 
                     <button
                             disabled={linesCount === 1}

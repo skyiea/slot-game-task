@@ -45,8 +45,14 @@ class InfoPanel extends Component {
                         </section>
                 }
                 {
+                    !spinInProgress && !!totalWin &&
+                        <section styleName="line victory">
+                            You won!
+                        </section>
+                }
+                {
                     spinInProgress &&
-                        <section styleName="line">
+                        <section styleName="line loading">
                             Spin in progress..
                         </section>
                 }

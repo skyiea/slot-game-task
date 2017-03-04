@@ -1,9 +1,8 @@
-import axios from 'axios';
-
 import TYPES from './actionTypes';
 
 import genAction from '../utils/redux-helpers/genAction';
 import STATUS from '../enums/requestStatus';
+import * as slotAPI from '../utils/api/slotAPI';
 
 const fetchConfig = genAction(TYPES.FETCH_CONFIG);
 
@@ -11,16 +10,14 @@ export default function () {
     return async function (dispatch) {
         dispatch(fetchConfig(STATUS.request));
 
-        try {
-            const response = await axios.get('http://demo-slot-server.herokuapp.com/slot/config');
+        let config;
 
-            dispatch(fetchConfig(STATUS.success, {
-                config: response.data
-            }));
+        try {
+            config = await slotAPI.fetchConfig();
         } catch (error) {
-            dispatch(fetchConfig(STATUS.failure), {
-                error
-            });
+            dispatch(fetchConfig(STATUS.failure), { error });
         }
+
+        dispatch(fetchConfig(STATUS.success, { config }));
     };
 }

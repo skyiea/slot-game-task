@@ -13,13 +13,13 @@
         display: flex;
         height: $height;
         border-bottom: 1px solid $color-black;
-        box-shadow: 0 2px 2px $color-grey;
+        box-shadow: 0 2px 2px $color-light-grey;
 
         justify-content: center;
 
         line-height: $height;
 
-        background-color: $color-grey;
+        background-color: $color-light-grey;
 
         >a {
             padding: 0 1rem;
@@ -38,7 +38,7 @@
 
             &:hover,
             &.active {
-                color: #777;
+                color: $color-grey;
             }
         }
     }
