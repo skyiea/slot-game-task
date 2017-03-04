@@ -1,5 +1,8 @@
 import STATUS from '../enums/requestStatus';
 import TYPES from '../actions/actionTypes';
+import createReducer from '../utils/redux-helpers/createReducer';
+
+import slotStateReducer from './slotStateReducer';
 
 function rootReducer(state, action) {
     const {
@@ -29,46 +32,6 @@ function rootReducer(state, action) {
                 config: newConfig
             };
         }
-        case TYPES.RESET_SLOT_STATE: {
-            let newSlotState;
-
-            switch (status) {
-                case STATUS.request:
-                    newSlotState = null;
-
-                    break;
-                case STATUS.success:
-                    newSlotState = payload.slotState;
-
-                    break;
-                default:
-            }
-
-            return {
-                ...state,
-                slotState: newSlotState
-            };
-        }
-        case TYPES.FETCH_SLOT_STATE: {
-            let newSlotState;
-
-            switch (status) {
-                case STATUS.request:
-                    newSlotState = null;
-
-                    break;
-                case STATUS.success:
-                    newSlotState = payload.slotState;
-
-                    break;
-                default:
-            }
-
-            return {
-                ...state,
-                slotState: newSlotState
-            };
-        }
         case TYPES.SPIN_SLOTS:
             switch (status) {
                 case STATUS.request:
@@ -84,8 +47,7 @@ function rootReducer(state, action) {
                 case STATUS.success:
                     return {
                         ...state,
-                        spinInProgress: false,
-                        slotState: payload.slotState
+                        spinInProgress: false
                     };
                 default:
             }
@@ -117,4 +79,6 @@ function rootReducer(state, action) {
     return state;
 }
 
-export default rootReducer;
+export default createReducer(rootReducer, {
+    slotState: slotStateReducer
+});
