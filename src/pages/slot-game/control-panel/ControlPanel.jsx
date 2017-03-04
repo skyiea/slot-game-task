@@ -6,6 +6,8 @@ import {
     LINES_COUNT
 } from '../../../utils/constants';
 
+import Crement from './crement/Crement';
+
 import styles from './ControlPanel.scss';
 
 @CSSModules(styles)
@@ -29,37 +31,25 @@ class ControlPanel extends Component {
                 <section styleName="line">
                     <label>Line bet: </label>
 
-                    <button
-                            disabled={lineBet === LINE_BET.min}
-                            onClick={decrementLineBet}>
-                        -
-                    </button>
-
-                    <span styleName="option">{lineBet}</span>
-
-                    <button
-                            disabled={lineBet === LINE_BET.max}
-                            onClick={incrementLineBet}>
-                        +
-                    </button>
+                    <Crement
+                            min={LINE_BET.min}
+                            max={LINE_BET.max}
+                            value={lineBet}
+                            onIncrement={incrementLineBet}
+                            onDecrement={decrementLineBet}
+                    />
                 </section>
 
                 <section styleName="line">
                     <label>Lines to bet: </label>
 
-                    <button
-                            disabled={linesCount === LINES_COUNT.min}
-                            onClick={decrementLinesCount}>
-                        -
-                    </button>
-
-                    <span styleName="option">{linesCount}</span>
-
-                    <button
-                            disabled={linesCount === LINES_COUNT.max}
-                            onClick={incrementLinesCount}>
-                        +
-                    </button>
+                    <Crement
+                            min={LINES_COUNT.min}
+                            max={LINES_COUNT.max}
+                            value={linesCount}
+                            onIncrement={incrementLinesCount}
+                            onDecrement={decrementLinesCount}
+                    />
                 </section>
 
                 <section styleName="line">
