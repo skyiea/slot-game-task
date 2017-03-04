@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
 import CSSModules from '../../../utils/css-modules';
-import {
-    LINE_BET,
-    LINES_COUNT
-} from '../../../utils/constants';
+import { LINES_COUNT } from '../../../utils/constants';
 
 import Crement from './crement/Crement';
 
@@ -36,8 +33,8 @@ class ControlPanel extends Component {
                     <label>Line bet: </label>
 
                     <Crement
-                            min={LINE_BET.min}
-                            max={LINE_BET.max}
+                            min={config.minCoins}
+                            max={config.maxCoins}
                             value={lineBet}
                             onIncrement={incrementLineBet}
                             onDecrement={decrementLineBet}

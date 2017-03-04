@@ -12,26 +12,28 @@ function rootReducer(state, action) {
     } = action;
 
     switch (type) {
-        case TYPES.FETCH_CONFIG: {
-            let newConfig;
-
+        case TYPES.FETCH_CONFIG:
             switch (status) {
                 case STATUS.request:
-                    newConfig = null;
+                    return {
+                        ...state,
+                        config: null
+                    };
+                case STATUS.success: {
+                    const {
+                        config
+                    } = payload;
 
-                    break;
-                case STATUS.success:
-                    newConfig = payload.config;
-
-                    break;
+                    return {
+                        ...state,
+                        lineBet: config.maxCoins,
+                        config
+                    };
+                }
                 default:
             }
 
-            return {
-                ...state,
-                config: newConfig
-            };
-        }
+            break;
         case TYPES.SPIN_SLOTS:
             switch (status) {
                 case STATUS.request:
