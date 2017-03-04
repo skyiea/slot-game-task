@@ -21,12 +21,12 @@ class InfoPanel extends Component {
 
         return (
             <section styleName="info-panel">
-                <section styleName="line">
+                <section styleName="line balance">
                     <label>Balance: </label>
-                    <span>{balance}</span>
+                    <span styleName={balance === 0 && 'empty'}>{balance}</span>
                 </section>
                 {
-                    gameRoundId !== null &&
+                    !spinInProgress && gameRoundId !== null &&
                         <section styleName="round-info">
                             <section styleName="line">
                                 <label>Round Id:</label>

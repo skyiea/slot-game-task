@@ -15,6 +15,7 @@ class ControlPanel extends Component {
     render() {
         const {
             config,
+            slotState,
             spinInProgress,
             lineBet,
             linesCount,
@@ -25,6 +26,9 @@ class ControlPanel extends Component {
             incrementLineBet,
             decrementLineBet,
         } = this.props;
+
+        const notEnoughBalance = slotState.balance < linesCount * lineBet;
+        const spinBtnDisabled = spinInProgress || notEnoughBalance;
 
         return (
             <section styleName="control-panel">
@@ -52,12 +56,16 @@ class ControlPanel extends Component {
                     />
                 </section>
 
-                <section styleName="line">
+                <section styleName="line spin">
                     <button
-                            disabled={spinInProgress}
+                            disabled={spinBtnDisabled}
                             onClick={() => spinSlots(lineBet / config.coinValue, linesCount)}>
                         Spin
                     </button>
+                    {
+                        notEnoughBalance &&
+                            <span styleName="warning">Not enough coins!</span>
+                    }
                 </section>
             </section>
         );

@@ -17,6 +17,12 @@
             flex-grow: 1;
         }
 
+        &.balance {
+            >span.empty {
+                color: $color-red;
+            }
+        }
+
         &.loading {
             color: $color-blue;
         }
