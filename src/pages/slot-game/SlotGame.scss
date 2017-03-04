@@ -1,11 +1,18 @@
-.slot-game {
-    width: 25rem;
-    height: 25rem;
+@import '../../styles/mixins';
+
+.slot-game-page {
+    @include page-default();
+
+    width: 30rem;
+    height: 30rem;
     padding: 1rem;
     margin: 2rem auto 0;
     box-shadow: 0 .5rem .7rem #777;
 
+    flex-grow: 0;
+
     background-color: #ccc;
+    overflow: hidden;
 
     >.first-row {
         display: flex;

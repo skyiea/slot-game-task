@@ -6,44 +6,64 @@ import styles from './ControlPanel.scss';
 
 @CSSModules(styles)
 class ControlPanel extends Component {
-    state = {
-        linesCount: 3
-    };
-
-    handleLinesCountChange(e) {
-        this.setState({
-            linesCount: e.target.value
-        });
-    }
-
     render() {
         const {
-            // config,
-            // slotState,
+            config,
+            spinInProgress,
+            lineBet,
+            linesCount,
 
-            spinSlots
+            spinSlots,
+            incrementLinesCount,
+            decrementLinesCount,
+            incrementLineBet,
+            decrementLineBet,
         } = this.props;
-
-        const {
-            linesCount
-        } = this.state;
 
         return (
             <section styleName="control-panel">
-                <button onClick={spinSlots}>
-                    Spin
-                </button>
+                <section styleName="line">
+                    <label>Line bet: </label>
 
-                <section styleName="lines-count">
-                    <label>Lines count: </label>
+                    <button
+                            disabled={lineBet === 3}
+                            onClick={decrementLineBet}>
+                        -
+                    </button>
 
-                    <input
-                            type="number"
-                            min="1"
-                            max="3"
-                            value={linesCount}
-                            onChange={::this.handleLinesCountChange}
-                    />
+                    <span styleName="option">{lineBet}</span>
+
+                    <button
+                            disabled={lineBet === 10}
+                            onClick={incrementLineBet}>
+                        +
+                    </button>
+                </section>
+
+                <section styleName="line">
+                    <label>Bet on lines: </label>
+
+                    <button
+                            disabled={linesCount === 1}
+                            onClick={decrementLinesCount}>
+                        -
+                    </button>
+
+                    <span styleName="option">{linesCount}</span>
+
+                    <button
+                            disabled={linesCount === 3}
+                            onClick={incrementLinesCount}>
+                        +
+                    </button>
+                </section>
+
+                <section styleName="line">
+                    <button
+                            disabled={spinInProgress}
+                            onClick={() => spinSlots(lineBet / config.coinValue, linesCount)}>
+                        Spin
+                    </button>
                 </section>
             </section>
         );

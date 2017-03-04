@@ -11,9 +11,11 @@ import Slots from './Slots';
 const mapStateToProps = ({
     config,
     slotState,
+    spinInProgress,
 }) => ({
     config,
     slotState,
+    spinInProgress,
 });
 
 const mapDispatchToProps = mapActionCreators({

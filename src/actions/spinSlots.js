@@ -7,16 +7,18 @@ import STATUS from '../enums/requestStatus';
 
 const spinSlots = genAction(TYPES.SPIN_SLOTS);
 
-export default function () {
+export default function (lineBet, linesCount) {
     return async function (dispatch) {
         dispatch(spinSlots(STATUS.request));
 
         try {
-            const response = await axios.get('http://demo-slot-server.herokuapp.com/slot/spin?lineBet=100&linesCount=3');
+            const response = await axios.get(`http://demo-slot-server.herokuapp.com/slot/spin?lineBet=${lineBet}&linesCount=${linesCount}`);
 
-            dispatch(spinSlots(STATUS.success, {
-                slotState: response.data
-            }));
+            setTimeout(() => {
+                dispatch(spinSlots(STATUS.success, {
+                    slotState: response.data
+                }));
+            }, 1000);
         } catch (error) {
             dispatch(spinSlots(STATUS.failure), {
                 error

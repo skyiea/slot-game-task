@@ -1,21 +1,20 @@
 $size: 15rem;
+$space-between: 1rem;
 
 .slots {
-    $border-value: 2px solid black;
+    $border-value: 1px solid black;
 
     display: flex;
-    width: $size;
+    width: $size + 2 * $space-between;
     height: $size;
-    border: $border-value;
 
-    flex-direction: column;
+    flex: {
+        shrink: 0;
+        direction: column;
+    }
 
     >.row {
         display: flex;
-
-        &:not(:last-child) {
-            border-bottom: $border-value;
-        }
 
         >.cell {
             $size: 5rem;
@@ -24,6 +23,10 @@ $size: 15rem;
 
             display: inline-block;
             height: $size;
+            border: {
+                right: $border-value;
+                left: $border-value;
+            }
 
             flex: {
                 grow: 1;
@@ -35,7 +38,7 @@ $size: 15rem;
             line-height: $size;
 
             &:not(:last-child) {
-                border-right: $border-value;
+                margin-right: $space-between;
             }
 
             &.checked:before {
@@ -53,6 +56,12 @@ $size: 15rem;
                 border-radius: $size;
 
                 content: '';
+            }
+        }
+
+        &:not(:last-child) {
+            >.cell {
+                border-bottom: $border-value;
             }
         }
     }

@@ -2,24 +2,26 @@ import { connect } from 'react-redux';
 
 import mapActionCreators from '../../../utils/redux-helpers/mapActionCreators';
 
-import fetchConfig from '../../../actions/fetchConfig';
-import resetSlotState from '../../../actions/resetSlotState';
-import spinSlots from '../../../actions/spinSlots';
+import * as BetActions from '../../../actions/BetActions';
 
 import ControlPanel from './ControlPanel';
 
 const mapStateToProps = ({
     config,
     slotState,
+    spinInProgress,
+    lineBet,
+    linesCount,
 }) => ({
     config,
     slotState,
+    spinInProgress,
+    lineBet,
+    linesCount,
 });
 
 const mapDispatchToProps = mapActionCreators({
-    fetchConfig,
-    resetSlotState,
-    spinSlots,
+    BetActions,
 });
 
 export default connect(

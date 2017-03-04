@@ -8,8 +8,8 @@ import styles from './InfoPanel.scss';
 class InfoPanel extends Component {
     render() {
         const {
-            // config,
             slotState,
+            spinInProgress,
         } = this.props;
 
         const {
@@ -42,6 +42,12 @@ class InfoPanel extends Component {
                                 <label>Total Win:</label>
                                 <span>{totalWin}</span>
                             </section>
+                        </section>
+                }
+                {
+                    spinInProgress &&
+                        <section styleName="line">
+                            Spin in progress..
                         </section>
                 }
             </section>

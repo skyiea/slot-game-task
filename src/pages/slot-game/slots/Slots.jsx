@@ -36,8 +36,8 @@ class Slots extends Component {
 
     render() {
         const {
-            // config,
             slotState,
+            spinInProgress,
         } = this.props;
 
         const {
@@ -55,14 +55,14 @@ class Slots extends Component {
                                 styleName="row">
                             {
                                 row.map((cell, cellIndex) => {
-                                    const checked = checkedCells.some(({ row, reel }) =>
+                                    const checked = !spinInProgress && checkedCells.some(({ row, reel }) =>
                                         row === rowIndex && reel === cellIndex);
 
                                     return (
                                         <section
                                                 key={`${rowIndex}:${cellIndex}`}
                                                 styleName={cn('cell', { checked })}>
-                                            {cell}
+                                            {!spinInProgress && cell}
                                         </section>
                                     );
                                 })

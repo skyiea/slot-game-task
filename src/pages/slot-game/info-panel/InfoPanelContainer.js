@@ -11,9 +11,11 @@ import InfoPanel from './InfoPanel';
 const mapStateToProps = ({
     config,
     slotState,
+    spinInProgress,
 }) => ({
     config,
     slotState,
+    spinInProgress,
 });
 
 const mapDispatchToProps = mapActionCreators({

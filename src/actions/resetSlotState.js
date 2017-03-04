@@ -11,16 +11,18 @@ export default function () {
     return async function (dispatch) {
         dispatch(resetSlotState(STATUS.request));
 
-        try {
-            const response = await axios.get('http://demo-slot-server.herokuapp.com/slot/reset');
+        let response;
 
-            dispatch(resetSlotState(STATUS.success, {
-                slotState: response.data
-            }));
+        try {
+            response = await axios.get('http://demo-slot-server.herokuapp.com/slot/reset');
         } catch (error) {
             dispatch(resetSlotState(STATUS.failure), {
                 error
             });
         }
+
+        dispatch(resetSlotState(STATUS.success, {
+            slotState: response.data
+        }));
     };
 }

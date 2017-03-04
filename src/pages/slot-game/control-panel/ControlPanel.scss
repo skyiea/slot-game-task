@@ -1,12 +1,32 @@
 .control-panel {
-    button,
-    input {
+    margin-top: 1rem;
+
+    button {
         padding: .6rem 1rem;
 
         font-size: .9rem;
+
+        &:not(:disabled) {
+            cursor: pointer;
+        }
     }
 
-    >input {
-        margin-left: 2rem;
+    >.line {
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+
+        >label {
+            display: inline-block;
+            width: 6rem;
+        }
+
+        >.option {
+            display: inline-block;
+            width: 2rem;
+
+            font-size: 1.2rem;
+            text-align: center;
+        }
     }
 }

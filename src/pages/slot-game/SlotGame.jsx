@@ -13,12 +13,17 @@ import styles from './SlotGame.scss';
 class SlotGame extends Component {
     componentWillMount() {
         const {
+            config,
+
             fetchConfig,
             resetSlotState
         } = this.props;
 
-        fetchConfig();
-        resetSlotState();
+        // initial open
+        if (!config) {
+            fetchConfig();
+            resetSlotState();
+        }
     }
 
     render() {
@@ -27,7 +32,7 @@ class SlotGame extends Component {
             slotState,
         } = this.props;
 
-        const rootStyleName = 'slot-game';
+        const rootStyleName = 'slot-game-page';
 
         if (!config || !slotState) {
             return (
