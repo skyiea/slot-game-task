@@ -15,7 +15,7 @@ import { Provider } from 'react-redux';
 import createStore from './store/createStore';
 
 import App from './components/app-root/AppContainer';
-import Home from './pages/home/HomeContainer';
+import SlotGame from './pages/slot-game/SlotGameContainer';
 import About from './pages/about/AboutContainer';
 import PageNotFound from './pages/page-not-found/PageNotFoundContainer';
 
@@ -27,9 +27,9 @@ ReactDOM.render((
     <Provider store={store}>
         <Router history={browserHistory}>
             <Route path="/" component={App}>
-                <Route path="home" component={Home}/>
+                <Route path="slot-game" component={SlotGame}/>
                 <Route path="about" component={About}/>
-                <IndexRoute component={Home}/>
+                <IndexRoute component={SlotGame}/>
                 <Route path="*" component={PageNotFound}/>
             </Route>
         </Router>

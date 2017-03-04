@@ -1,0 +1,13 @@
+.info-panel {
+    .line {
+        display: flex;
+
+        >label {
+            width: 5rem;
+        }
+
+        >span {
+            flex-grow: 1;
+        }
+    }
+}

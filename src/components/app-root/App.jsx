@@ -18,9 +18,9 @@ class App extends Component {
             <section styleName="app">
                 <nav>
                     <Link
-                            styleName={location.pathname === '/home' && 'active'}
-                            to="/home">
-                        Home
+                            styleName={location.pathname === '/slot-game' && 'active'}
+                            to="/slot-game">
+                        Slot Game
                     </Link>
 
                     <Link

@@ -1,0 +1,59 @@
+$size: 15rem;
+
+.slots {
+    $border-value: 2px solid black;
+
+    display: flex;
+    width: $size;
+    height: $size;
+    border: $border-value;
+
+    flex-direction: column;
+
+    >.row {
+        display: flex;
+
+        &:not(:last-child) {
+            border-bottom: $border-value;
+        }
+
+        >.cell {
+            $size: 5rem;
+
+            position: relative;
+
+            display: inline-block;
+            height: $size;
+
+            flex: {
+                grow: 1;
+                basis: 0;
+            }
+
+            font-size: 2rem;
+            text-align: center;
+            line-height: $size;
+
+            &:not(:last-child) {
+                border-right: $border-value;
+            }
+
+            &.checked:before {
+                $size: 3rem;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+
+                display: block;
+                width: $size;
+                height: $size;
+                border: 1px solid red;
+                border-radius: $size;
+
+                content: '';
+            }
+        }
+    }
+}

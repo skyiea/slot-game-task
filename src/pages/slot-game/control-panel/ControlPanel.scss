@@ -1,0 +1,12 @@
+.control-panel {
+    button,
+    input {
+        padding: .6rem 1rem;
+
+        font-size: .9rem;
+    }
+
+    >input {
+        margin-left: 2rem;
+    }
+}
