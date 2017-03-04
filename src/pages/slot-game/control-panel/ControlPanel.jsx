@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 import CSSModules from '../../../utils/css-modules';
+import {
+    LINE_BET,
+    LINES_COUNT
+} from '../../../utils/constants';
 
 import styles from './ControlPanel.scss';
 
@@ -26,7 +30,7 @@ class ControlPanel extends Component {
                     <label>Line bet: </label>
 
                     <button
-                            disabled={lineBet === 3}
+                            disabled={lineBet === LINE_BET.min}
                             onClick={decrementLineBet}>
                         -
                     </button>
@@ -34,7 +38,7 @@ class ControlPanel extends Component {
                     <span styleName="option">{lineBet}</span>
 
                     <button
-                            disabled={lineBet === 10}
+                            disabled={lineBet === LINE_BET.max}
                             onClick={incrementLineBet}>
                         +
                     </button>
@@ -44,7 +48,7 @@ class ControlPanel extends Component {
                     <label>Lines to bet: </label>
 
                     <button
-                            disabled={linesCount === 1}
+                            disabled={linesCount === LINES_COUNT.min}
                             onClick={decrementLinesCount}>
                         -
                     </button>
@@ -52,7 +56,7 @@ class ControlPanel extends Component {
                     <span styleName="option">{linesCount}</span>
 
                     <button
-                            disabled={linesCount === 3}
+                            disabled={linesCount === LINES_COUNT.max}
                             onClick={incrementLinesCount}>
                         +
                     </button>
