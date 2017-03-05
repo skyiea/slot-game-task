@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import CSSModules from '../../../utils/css-modules';
 
@@ -6,6 +6,12 @@ import styles from './InfoPanel.scss';
 
 @CSSModules(styles)
 class InfoPanel extends Component {
+    static propTypes = {
+        config          : PropTypes.object.isRequired,
+        slotState       : PropTypes.object.isRequired,
+        spinInProgress  : PropTypes.bool.isRequired,
+    };
+
     render() {
         const {
             config,

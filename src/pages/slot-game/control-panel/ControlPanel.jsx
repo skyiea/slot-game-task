@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import CSSModules from '../../../utils/css-modules';
 import { LINES_COUNT } from '../../../utils/constants';
@@ -9,6 +9,20 @@ import styles from './ControlPanel.scss';
 
 @CSSModules(styles)
 class ControlPanel extends Component {
+    static propTypes = {
+        config          : PropTypes.object.isRequired,
+        slotState       : PropTypes.object.isRequired,
+        spinInProgress  : PropTypes.bool.isRequired,
+        lineBet         : PropTypes.number.isRequired,
+        linesCount      : PropTypes.number.isRequired,
+
+        spinSlots           : PropTypes.func.isRequired,
+        incrementLinesCount : PropTypes.func.isRequired,
+        decrementLinesCount : PropTypes.func.isRequired,
+        incrementLineBet    : PropTypes.func.isRequired,
+        decrementLineBet    : PropTypes.func.isRequired,
+    };
+
     render() {
         const {
             config,

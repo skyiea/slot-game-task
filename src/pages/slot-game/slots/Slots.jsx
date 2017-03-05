@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import cn from 'classnames';
 
 import CSSModules from '../../../utils/css-modules';
@@ -10,6 +10,12 @@ const TOUSLING_INTERVAL = 100;
 
 @CSSModules(styles)
 class Slots extends Component {
+    static propTypes = {
+        config          : PropTypes.object.isRequired,
+        slotState       : PropTypes.object.isRequired,
+        spinInProgress  : PropTypes.bool.isRequired,
+    };
+
     state = {
         fakeSymbols: []
     };

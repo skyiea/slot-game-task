@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import cn from 'classnames';
 
 import CSSModules from '../../utils/css-modules';
@@ -11,6 +11,14 @@ import styles from './SlotGame.scss';
 
 @CSSModules(styles)
 class SlotGame extends Component {
+    static propTypes = {
+        config      : PropTypes.object,
+        slotState   : PropTypes.object,
+
+        fetchConfig     : PropTypes.func.isRequired,
+        resetSlotState  : PropTypes.func.isRequired,
+    };
+
     componentWillMount() {
         const {
             config,
