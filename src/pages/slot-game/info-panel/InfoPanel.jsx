@@ -26,7 +26,7 @@ class InfoPanel extends Component {
                     <label>Balance: </label>
 
                     <span styleName={balance === 0 && 'empty'}>
-                        {balance / config.coinValue}
+                        {balance}
                     </span>
                 </section>
                 {
@@ -39,12 +39,12 @@ class InfoPanel extends Component {
 
                             <section styleName="line">
                                 <label>Total Bet:</label>
-                                <span>{totalBet}</span>
+                                <span>{totalBet * config.coinValue}</span>
                             </section>
 
                             <section styleName="line">
                                 <label>Total Win:</label>
-                                <span>{totalWin}</span>
+                                <span>{totalWin * config.coinValue}</span>
                             </section>
                         </section>
                 }

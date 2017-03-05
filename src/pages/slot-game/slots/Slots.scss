@@ -39,6 +39,8 @@ $space-between: 1rem;
             text-align: center;
             line-height: $size;
 
+            background-color: $color-orange;
+
             &:not(:last-child) {
                 margin-right: $space-between;
             }
