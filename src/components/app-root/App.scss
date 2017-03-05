@@ -15,6 +15,7 @@
         border-bottom: 1px solid $color-black;
         box-shadow: 0 2px 2px $color-light-grey;
 
+        flex-shrink: 0;
         justify-content: center;
 
         line-height: $height;

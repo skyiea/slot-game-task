@@ -1,6 +1,10 @@
 .crement {
     display: inline-block;
 
+    >button {
+        font-size: 1.2rem;
+    }
+
     >.value {
         display: inline-block;
         width: 3rem;
