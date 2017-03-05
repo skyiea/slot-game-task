@@ -13,3 +13,9 @@ In order to run:
 2. `npm run build`
 
 3. Visit [http://localhost:3000](http://localhost:3000)
+
+Or just play [online](https://skyiea.github.io/).
+
+## Test
+
+In order to start tests run `npm run test`.
