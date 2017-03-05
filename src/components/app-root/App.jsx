@@ -18,7 +18,7 @@ class App extends Component {
             <section styleName="app">
                 <nav>
                     <Link
-                            styleName={location.pathname === '/slot-game' && 'active'}
+                            styleName={[ '/', '/slot-game' ].indexOf(location.pathname) !== -1 && 'active'}
                             to="/slot-game">
                         Slot Game
                     </Link>

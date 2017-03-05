@@ -8,8 +8,10 @@
 
         font-size: .9rem;
 
-        &:not(:disabled) {
-            cursor: pointer;
+        cursor: pointer;
+
+        &:disabled {
+            cursor: not-allowed;
         }
     }
 
