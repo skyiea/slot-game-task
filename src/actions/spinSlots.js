@@ -1,6 +1,5 @@
-import TYPES from './actionTypes';
-
-import STATUS from '../enums/requestStatus';
+import TYPES from '../constants/actionTypes';
+import STATUS from '../constants/requestStatus';
 
 import genAction from '../utils/redux-helpers/genAction';
 import * as slotAPI from '../utils/api/slotAPI';
@@ -30,7 +29,7 @@ export default function (lineBet, linesCount) {
                 dispatch(spinSlots(STATUS.success, { slotState }));
             }
         } catch (error) {
-            dispatch(spinSlots(STATUS.failure), { error });
+            dispatch(spinSlots(STATUS.failure, { error }));
         }
     };
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://demo-slot-server.herokuapp.com/slot';
+export const API_BASE = 'http://demo-slot-server.herokuapp.com/slot';
 
 function parseResponse(response) {
     return response.data;

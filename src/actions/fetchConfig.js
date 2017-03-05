@@ -1,6 +1,5 @@
-import TYPES from './actionTypes';
-
-import STATUS from '../enums/requestStatus';
+import TYPES from '../constants/actionTypes';
+import STATUS from '../constants/requestStatus';
 
 import genAction from '../utils/redux-helpers/genAction';
 import * as slotAPI from '../utils/api/slotAPI';
@@ -16,7 +15,7 @@ export default function () {
 
             dispatch(fetchConfig(STATUS.success, { config }));
         } catch (error) {
-            dispatch(fetchConfig(STATUS.failure), { error });
+            dispatch(fetchConfig(STATUS.failure, { error }));
         }
     };
 }

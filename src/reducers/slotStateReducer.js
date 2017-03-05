@@ -1,5 +1,5 @@
-import STATUS from '../enums/requestStatus';
-import TYPES from '../actions/actionTypes';
+import STATUS from '../constants/requestStatus';
+import TYPES from '../constants/actionTypes';
 
 function reducer(state, action) {
     const {

@@ -1,4 +1,4 @@
-import { LINES_COUNT } from '../utils/constants';
+import LINES_COUNT from '../constants/linesCount';
 
 export default {
     config          : null,

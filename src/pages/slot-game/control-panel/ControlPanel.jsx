@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import CSSModules from '../../../utils/css-modules';
-import { LINES_COUNT } from '../../../utils/constants';
+import LINES_COUNT from '../../../constants/linesCount';
 
 import Crement from '../../../components/crement/Crement';
 

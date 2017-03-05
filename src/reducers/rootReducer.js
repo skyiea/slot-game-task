@@ -1,10 +1,11 @@
-import STATUS from '../enums/requestStatus';
-import TYPES from '../actions/actionTypes';
+import STATUS from '../constants/requestStatus';
+import TYPES from '../constants/actionTypes';
 import createReducer from '../utils/redux-helpers/createReducer';
+import initialState from '../store/initialState';
 
 import slotStateReducer from './slotStateReducer';
 
-function rootReducer(state, action) {
+function rootReducer(state = initialState, action) {
     const {
         type,
         status,

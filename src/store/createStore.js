@@ -3,7 +3,6 @@ import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
 import rootReducer from '../reducers/rootReducer';
-import initialState from './initialState';
 
 const middlewares = [
     thunkMiddleware,
@@ -19,5 +18,5 @@ if (__ENV__ === 'dev') {
 }
 
 export default function () {
-    return createStore(rootReducer, initialState, applyMiddleware(...middlewares));
+    return createStore(rootReducer, applyMiddleware(...middlewares));
 }

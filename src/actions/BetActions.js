@@ -1,4 +1,4 @@
-import TYPES from './actionTypes';
+import TYPES from '../constants/actionTypes';
 
 export function incrementLinesCount() {
     return {
