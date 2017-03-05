@@ -11,12 +11,12 @@
     "test:watch": "npm test -- --watch",
     "server": "nodemon --watch static-server.js static-server.js",
     "clean": "node node-scripts/clean",
-    "build": "npm run clean && NODE_ENV=prod webpack --config webpack.prod.config.js --progress --bail",
+    "build": "npm run clean && cross-env NODE_ENV=prod webpack --config webpack.prod.config.js --progress --bail",
     "prod": "npm run build",
     "watch": "npm run clean && webpack --config webpack.dev.config.js --progress --watch",
     "hot": "npm run clean && webpack-dev-server --config webpack.dev.config.js --inline --hot --progress",
-    "watchs": "SOURCE_MAPS=on npm run watch",
-    "hots": "SOURCE_MAPS=on npm run hot"
+    "watchs": "cross-env SOURCE_MAPS=on npm run watch",
+    "hots": "cross-env SOURCE_MAPS=on npm run hot"
   },
   "jest": {
     "moduleNameMapper": {
@@ -45,6 +45,7 @@
     "babel-regenerator-runtime": "^6.5.0",
     "bluebird": "^3.5.0",
     "classnames": "^2.2.5",
+    "cross-env": "^3.2.3",
     "css-loader": "^0.26.2",
     "enzyme": "^2.7.1",
     "eslint": "^3.17.0",
